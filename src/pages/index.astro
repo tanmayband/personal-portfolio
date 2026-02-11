@@ -27,14 +27,16 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello! My name is Tanmay Band."
+					title="Hello! My name is Tanmay."
 					tagline="I am a Game Systems Engineer based in India."
 					align="start"
 				>
 					<div class="roles">
+						<!-- <Pill><Icon icon="unreal" size="1.33em" /> Unreal Engine</Pill>
+						<Pill><Icon icon="unity" size="1.33em" /> Unity</Pill> -->
 						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+						<Pill><Icon icon="palette" size="1.33em" /> Creative</Pill>
+						<Pill><Icon icon="trophy" size="1.33em" /> Leader</Pill>
 					</div>
 				</Hero>
 
@@ -53,11 +55,11 @@ const projects = (await getCollection('work'))
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<p>Take a look at some of my work from the past few years.</p>
 				</header>
 
 				<div class="gallery">
-					<Grid variant="offset">
+					<Grid>
 						{
 							projects.map((project) => (
 								<li>
@@ -126,7 +128,7 @@ const projects = (await getCollection('work'))
 	@media (min-width: 50em) {
 		.hero {
 			display: grid;
-			grid-template-columns: 6fr 4fr;
+			/* grid-template-columns: 6fr 4fr; */
 			padding-inline: 2.5rem;
 			gap: 3.75rem;
 		}
@@ -166,12 +168,12 @@ const projects = (await getCollection('work'))
 		aspect-ratio: calc(2.25 / var(--bg-scale));
 		top: 0;
 		transform: translateY(-75%) translateX(-50%);
-		background:
+		/* background:
 			url('/assets/backgrounds/noise.png') top center/220px repeat,
 			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
 			var(--gray-999);
 		background-blend-mode: overlay, normal, normal, normal;
-		mix-blend-mode: var(--bg-blend-mode);
+		mix-blend-mode: var(--bg-blend-mode); */
 		z-index: -1;
 	}
 
