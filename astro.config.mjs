@@ -9,6 +9,6 @@ export default defineConfig({
     remarkPlugins: [remarkTableOfContents],
   },
   integrations: [mdx()],
-  site: 'https://tanmayband.github.io',
-  base: '/personal-portfolio'
+  site: 'https://tanmayband.github.io'
+  // base: '/personal-portfolio'
 });
