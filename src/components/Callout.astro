@@ -1,0 +1,41 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+	type: "info" | "warning" | "quote";
+	title?: Element | string;
+	body: Element | string;
+}
+
+const { type, title, body } = Astro.props as Props;
+const calloutColors = {
+  info: "#3b82f6",
+  warning: "#fbbf24",
+  quote: "#10b981",
+};
+
+---
+<div class="callout" style={`--callout-color: ${calloutColors[type]}`}>
+  {title && (
+    <div>
+      <Icon icon={type} size="1.5em" color={calloutColors[type]} /> <span class="callout-title">{title}</span>
+    </div>
+  )}
+  <div>{body}</div>
+</div>
+
+<style>
+	.callout {
+		font-style: italic;
+		padding-inline-start: 1.5rem;
+		border-inline-start: 0.25rem solid var(--callout-color);
+		color: var(--gray-0);
+	}
+
+	.callout-title {
+		font-weight: 600;
+		font-size: 1.1rem;
+		color: var(--callout-color);
+		vertical-align: middle;
+	}
+</style>

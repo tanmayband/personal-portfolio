@@ -1,0 +1,40 @@
+---
+interface Props {
+  chapters: {
+    depth: number;
+    title: string;
+    href: string;
+  }[];
+}
+
+const { chapters } = Astro.props;
+---
+
+<aside class="toc">
+  <h2>Contents</h2>
+  <ul>
+    {
+      chapters.map((chapter) => (
+        <li style={{ marginLeft: `${(chapter.depth - 2) * 1}em` }}>
+          <a href={chapter.href}>{chapter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</aside>
+
+<style>
+    .toc {
+        position: sticky;
+        top: 1rem;
+        height: max-content;
+		grid-row: 1;
+        grid-column: 2;
+    }
+
+    @media (max-width: 50em) {
+        .toc {
+            position: static;
+        }
+    }
+</style>

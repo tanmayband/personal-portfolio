@@ -1,0 +1,53 @@
+---
+title: Eat My Beat
+publishDate: 2020-03-02 00:00:00
+img: /assets/thumbnails/eatmybeat-1.gif
+img_alt: Circuit playing and destroying enemy waves
+description: |
+  Build circuits to play music and defeat enemy waves
+tags:
+  - Puzzle
+  - Rhythm
+  - Tower Defence
+engine: unreal
+cta:
+  - itch
+  - https://tanbanman.itch.io/eat-my-beat
+---
+import ImageWithCaption from '../../components/ImageWithCaption.astro';
+import Callout from '../../components/Callout.astro';
+import EMB2 from '@media/eatmybeat-2.gif';
+import EMB3 from '@media/eatmybeat-3.gif';
+
+## What?
+A genre-mash circuit-building game that combines music with puzzles. Enemies arrive to the beat of a melody and your goal is to play this melody using a bunch of circuitry components.
+
+## Gameplay
+The core gameplay loop consists of building a circuit that can play a melody. The circuit is built on a grid and consists of components that can be unlocked by progressing through the campaign. Each component has a specific function, and by strategically connecting them, players can create complex circuits that play the required melody and eliminate enemy waves.
+
+<ImageWithCaption src={EMB2} alt="Building and running a circuit"/>
+
+Components include:
+- **Pulser**: Generates periodic pulses based on a time signature, serving as the main beat provider.
+- **Wires**: Carry pulses. Single and bidirectional. Jumper wires can cross other wires without connecting.
+- **Sequencer**: Sequentially activates the next output pin for each input pulse.
+- **Counter**: Emits one output pulse after a defined number of input pulses. Useful for creating delays.
+
+<ImageWithCaption src={EMB3} alt="Unlocking components"/>
+
+<Callout type="info" title="Upgrades" body="There is preparation for upgrades, which are supposed to be bought with in-game currency. Upgrades include controllable pulser rate, more output pins on sequencer etc." />
+
+## Development
+I was inspired to make this by games like [Infinifactory](https://store.steampowered.com/app/300570/Infinifactory/). The development presented a lot of interesting challenges, including:
+1. A system for representing circuits in a way that is flexible.
+2. The logic for how pulses propagate through the circuit.
+3. A system for enemies to spawn and move according to the beat, along with detecting correct and incorrect notes played.
+4. A way to communicate the melody to be played visually.
+
+### Common component interface
+I created a common interface to represent the components and their connections, while providing enough flexibility to allow for a wide variety of component types. For generating the pulses, a global ticker was used to sync time steps across the level.
+
+ which required careful consideration of timing and interactions between components.
+
+ especially in terms of creating a user-friendly interface for building circuits and ensuring that the game mechanics were intuitive and engaging. I also had to implement a robust system for handling the timing of pulses and the interactions between different components.
+
