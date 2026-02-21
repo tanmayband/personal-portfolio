@@ -12,7 +12,7 @@ export const collections = {
 			tags: z.array(z.string()),
 			img: z.string(),
 			img_alt: z.string().optional(),
-			engine: z.enum(['unreal', 'unity']).optional(),
+			softwares: z.array(z.string()).optional(),
 			cta: z.array(z.string()).optional(),
 		}),
 	}),

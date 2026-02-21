@@ -27,9 +27,11 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await render(entry);
 
-const engineNames: { [key: string]: string } = {
+const softwareNames: { [key: string]: string } = {
 	unreal: "Unreal Engine",
+	uefn: "Unreal Engine for Fortnite",
 	unity: "Unity",
+	aws: "Amazon Web Services"
 };
 
 const ctaTexts: { [key: string]: string } = {
@@ -48,12 +50,14 @@ const ctaTexts: { [key: string]: string } = {
 					>
 						<div class="details">
 							<!-- <p class="description">{entry.data.description}</p> -->
-							 {entry.data.engine && (
+							 <div class="tags">
+							 {entry.data.softwares && entry.data.softwares.map((software) => 
 									<Pill>
-										<Icon icon={entry.data.engine} size="1.33em" />{' '}
-										{engineNames[entry.data.engine]}
+										<Icon icon={software} size="1.33em" />{' '}
+										{softwareNames[software]}
 									</Pill>
 								)}
+							</div>
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>

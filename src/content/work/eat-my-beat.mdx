@@ -4,15 +4,16 @@ publishDate: 2020-03-02 00:00:00
 img: /assets/thumbnails/eatmybeat-1.gif
 img_alt: Circuit playing and destroying enemy waves
 description: |
-  Build circuits to play music and defeat enemy waves
+    Build circuits to play music and defeat waves
 tags:
-  - Puzzle
-  - Rhythm
-  - Tower Defence
-engine: unreal
+    - Puzzle
+    - Rhythm
+    - Tower Defence
+softwares:
+    - unreal
 cta:
-  - itch
-  - https://tanbanman.itch.io/eat-my-beat
+    - itch
+    - https://tanbanman.itch.io/eat-my-beat
 ---
 
 import ImageWithCaption from '../../components/ImageWithCaption.astro';
@@ -40,7 +41,7 @@ Components include:
 <Callout type="info" title="Upgrades" body="There is preparation for upgrades, which are supposed to be bought with in-game currency. Upgrades include controllable pulser rate, more output pins on sequencer etc." />
 
 ## Development
-I was inspired to make this by games like [Infinifactory](https://store.steampowered.com/app/300570/Infinifactory/). The development presented a lot of interesting challenges, including:
+I was inspired by games like [Infinifactory](https://store.steampowered.com/app/300570/Infinifactory/). The development presented a lot of interesting challenges, including:
 1. A system for representing circuits in a way that is flexible.
 2. The logic for how pulses propagate through the circuit.
 3. A system for enemies to spawn and move according to the beat, along with detecting correct and incorrect notes played.
